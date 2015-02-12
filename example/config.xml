@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<Server>
+		<Config ControlSourceID = "57" ProgrameName="logger" ServerAddress="192.168.200.57" />
+	</Server>
+	
+	<Kafka>
+		<Connect Address="192.168.200.48:2181,192.168.200.58:2181,192.168.200.68:2181" />
+		<Config BatchSize="1" QueueSize="100000" QueueTime="500000" SubareaNum="20" GroupID = "Carelink"/>
+	</Kafka>
+	
+	<Hbase>
+		<HbaseConfig ZkQuorum="192.168.200.48,192.168.200.58,192.168.200.68" ClientPort="2181"/>
+		<TableInfo TableName="LOG_CLSystem" CmdColumnFamily="log" />
+	</Hbase>
+</root> 
